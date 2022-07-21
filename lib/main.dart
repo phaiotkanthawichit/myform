@@ -7,8 +7,8 @@ class AddItemPage extends StatefulWidget {
   }
 }
 
-class AddItemPageState extends State<AddItemPage>
- {
+class AddItemPageState extends State<AddItemPage> {
+  createItem() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,29 +17,33 @@ class AddItemPageState extends State<AddItemPage>
       ),
       body: Column(
         children: <Widget>[
-          Text("Helo"),      
+          TextField(
+            decoration: InputDecoration(labelText: "Name"),
+          ),
+          RaisedButton(
+            onPressed: createItem,
+            child: Text("Create"),
+          ),
         ],
       ),
     );
   }
 }
 
-class MainPage extends StatefulWidget
- {
+class MainPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return MainPageState();
   }
 }
 
-class MainPageState extends State<MainPage>
- {
-  showAddItemPage()
-   {
+class MainPageState extends State<MainPage> {
+  showAddItemPage() {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return AddItemPage();
     }));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +53,7 @@ class MainPageState extends State<MainPage>
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: showAddItemPage,
-        ),
-      
+      ),
       body: Column(
         children: <Widget>[
           Text('Helow'),
