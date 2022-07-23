@@ -8,6 +8,8 @@ class AddItemPage extends StatefulWidget {
 }
 
 class AddItemPageState extends State<AddItemPage> {
+  var ctl_name = TextEditingController();
+  var result = ' ----- Result ------';
   createItem() {}
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class AddItemPageState extends State<AddItemPage> {
       body: Column(
         children: <Widget>[
           TextField(
+            controller: this.ctl_name,
             decoration: InputDecoration(labelText: "Name"),
           ),
           RaisedButton(
