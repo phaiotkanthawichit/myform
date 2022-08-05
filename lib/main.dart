@@ -10,7 +10,10 @@ class AddItemPage extends StatefulWidget {
 class AddItemPageState extends State<AddItemPage> {
   var ctl_name = TextEditingController();
   var result = ' ----- Result ------';
-  createItem() {}
+  createItem() {
+    print('create');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +26,7 @@ class AddItemPageState extends State<AddItemPage> {
             controller: this.ctl_name,
             decoration: InputDecoration(labelText: "Name"),
           ),
-          RaisedButton(
+          ElevatedButton(
             onPressed: createItem,
             child: Text("Create"),
           ),
